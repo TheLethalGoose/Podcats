@@ -1,0 +1,134 @@
+/* Global geltende Einstellungen */
+
+* {
+  font-family: Helvetica, Arial, sans-serif;
+}
+header h1{
+  display: inline;
+  font-size: 500%;
+  min-width: 15%;
+}
+main h2{
+  font-size: 3em;
+}
+article[title^="Fest und Flauschig"] > img,
+h2 {
+  display: inline;
+}
+a[href^="mailto:"] {
+  display: inline;
+  background-image: url("../img/letter.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+}
+/* Form und Fieldset */
+
+.btn {
+  border-style: solid;
+  border-radius: 10px;
+  padding: 5px 15px 5px 15px;
+  background-color: #30517b;
+  color: white;
+}
+
+#newPodcastForm {
+  margin: 1% 2% 0 0;
+}
+.podFieldset {
+  border-width: 1px 0px 1px 0px;
+  border-style: solid;
+  border-color: black;
+  margin-bottom: 1%;
+  margin-right: 1%;
+}
+.podLegend {
+  border-style: solid;
+  border-width: 0px 1px 0px 1px;
+  border-color: black;
+  border-radius: 5%;
+  padding: 0px 5px 0px 5px;
+}
+.podInputField,
+.podTextField {
+  text-decoration: none;
+  border: solid;
+  border-width: 0px 0px 2px 0px;
+  border-color: lightgray;
+}
+.podInputField,
+.podTextField {
+  outline: none;
+}
+.podInputField:valid {
+  border-color: #08f78f;
+}
+.podInputField:invalid {
+  border-color: deeppink;
+}
+
+/* Podcast Tabelle */
+
+.podTable tbody tr:nth-child(even) {
+  background-color: lightgray;
+}
+.podTable > thead,
+tfoot,
+th {
+  background-color: #30517b;
+  padding: 5px 5px 5px 5px;
+  color: white;
+}
+
+/* Design der Abschnitte */
+/*-----------------------*/
+
+.podAside {
+  background-color: #30517b;
+  border-radius: 15px;
+  padding: 5px 20px 20px 20px;
+  margin-top: 5px;
+  border: solid 1px;
+  color: white;
+}
+/* Navigation */
+.podNav li {
+  display: inline;
+  margin-right: 10px;
+}
+.podNav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-evenly;
+}
+.podNav a {
+  color: white;
+}
+.podNav{
+  position: sticky;
+  background-color: #30517b;
+  top: 0;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid;
+  margin-bottom: 2%;
+}
+
+@media screen and (max-width: 768px) {
+    header h1{
+        font-size: 3em;
+    }
+    header img{
+      display: none;
+    }
+}
+@media screen and (max-width: 480px) {
+    header h1{
+        display: none;
+    }
+}

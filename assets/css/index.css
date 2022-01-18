@@ -1,0 +1,36 @@
+#kachelContainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.kachel {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  width: 15em;
+  height: 15em;
+  background-color: #30517b;
+
+  box-shadow: -2px 2px 5px black;
+  border-radius: 15px;
+  margin: 10px 10px 10px 10px;
+  padding: 2%;
+
+  color: white;
+  font-size: smaller;
+  word-break: keep-all;
+  text-align: center;
+
+}
+.kachel img {
+  min-width: 10em;
+  max-width: 10em;
+  margin-bottom: 10%;
+  height: auto;
+}
+.kachel:hover{
+  background-color: #4579bd;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Podcaster</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/flexbox.css" />
+  </head>
+  <body class="bodyContainer">
+    <header>
+      <img
+        src="/assets/img/microphone.png"
+        width="80"
+        alt="Bild von Mikrofon"
+      />
+      <h1>Podcaster</h1>
+    </header>
+    <nav class="podNav">
+      <ul>
+        <li><a href="index.html">Abonierte Podcasts</a></li>
+        <li><a href="index2.html">Abonierte Podcasts Kacheln</a></li>
+        <li><a href="podcast.html">Details zum Podcast</a></li>
+        <li><a href="episode.html">Details zur Episode</a></li>
+        <li><a href="newPodcast.html">Neuen Podcast hinzufügen</a></li>
+      </ul>
+    </nav>
+    <div class="podcastInformations">
+      <main class="mainContainer">
+        <form
+          action="https://labs.inf.fh-dortmund.de/podcastService/testPodcastSearch.php"
+          method="get"
+          id="podSearch"
+          title="Suchfeld für Podcasts"
+        >
+          <fieldset class="podFieldset">
+            <legend class="podLegend">Podcast Suche</legend>
+            <input
+              id="search"
+              type="text"
+              name="pctitle"
+              size="20"
+              pattern="^[A-Z].*$"
+              maxlength="100"
+              required
+              placeholder="Titel des Podcasts"
+            />
+            <input class="btn" type="submit" value="Suchen!" />
+          </fieldset>
+        </form>
+        <article>
+          <h2>Abonnierte Podcasts:</h2>
+          <ul>
+            <li><a href="/podcast.html">Fest und Flauschig</a> - 3 Folgen</li>
+            <li><a href="/podcast.html">Trashtalk mit Fabian</a> - 9 Folgen</li>
+            <li>
+              <a href="/podcast.html">5 Minuten Harry Podcast</a> - 34 Folgen
+            </li>
+          </ul>
+        </article>
+      </main>
+      <aside class="podAside">
+        <article>
+          <h3>Neueste Episoden</h3>
+          <ul>
+            <li>29.5.2016: Fest und Flauschig - The Big Empty</li>
+          </ul>
+        </article>
+      </aside>
+    </div>
+    <footer>
+      <p>&copy; 2021 Fabian Teufel</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+.bodyContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  min-height: 100%;
+  align-content: flex-start;
+  height: 100%;
+}
+.podcastInformations{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+.mainContainer{
+  flex-grow: 10;
+}
+.podAside {
+  flex-basis: 20%;
+}
+@media screen and (max-width: 768px) {
+    .podcastInformations{
+        flex-direction: column;
+    }
+}
