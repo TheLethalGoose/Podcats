@@ -35,6 +35,9 @@ footer {
   background-color: #30517b;
   color: white;
 }
+.btn:hover{
+  background-color: #4579bd;
+}
 
 #newPodcastForm {
   margin: 1% 2% 0 0;

@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/flexbox.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/index.css" />
   </head>
   <body class="bodyContainer">
     <header>
@@ -18,7 +19,6 @@
     <nav class="podNav">
       <ul>
         <li><a href="index.html">Abonierte Podcasts</a></li>
-        <li><a href="index2.html">Abonierte Podcasts Kacheln</a></li>
         <li><a href="podcast.html">Details zum Podcast</a></li>
         <li><a href="episode.html">Details zur Episode</a></li>
         <li><a href="newPodcast.html">Neuen Podcast hinzufügen</a></li>
@@ -30,7 +30,6 @@
           action="https://labs.inf.fh-dortmund.de/podcastService/testPodcastSearch.php"
           method="get"
           id="podSearch"
-          title="Suchfeld für Podcasts"
         >
           <fieldset class="podFieldset">
             <legend class="podLegend">Podcast Suche</legend>
@@ -44,18 +43,59 @@
               required
               placeholder="Titel des Podcasts"
             />
-            <input class="btn" type="submit" value="Suchen!" />
+            <button class="btn" form="podSearch" type="submit">Suchen!</button>
           </fieldset>
         </form>
         <article>
           <h2>Abonnierte Podcasts:</h2>
-          <ul>
-            <li><a href="/podcast.html">Fest und Flauschig</a> - 3 Folgen</li>
-            <li><a href="/podcast.html">Trashtalk mit Fabian</a> - 9 Folgen</li>
-            <li>
-              <a href="/podcast.html">5 Minuten Harry Podcast</a> - 34 Folgen
-            </li>
-          </ul>
+          <div id="kachelContainer">
+            <a href="/podcast.html" class="kachel">
+              <img
+                src="/assets/img/foot.png"
+                width="50"
+                alt="Bild von einem gut gepflegtem Fuß"
+              />
+              Fest und Flauschig
+            </a>
+
+            <a href="/podcast.html" class="kachel">
+              <img
+                src="/assets/img/trash.png"
+                width="50"
+                alt="Bild von dampfendem Müll"
+              />
+              Trashtalk mit Fabian
+            </a>
+
+            <a href="/podcast.html" class="kachel">
+              <img
+                src="assets/img/staff.png"
+                width="50"
+                alt="Bild von einem Zaubserstab"
+              />
+              5 Minuten Harry Podcast
+            </a>
+
+            <a href="/podcast.html" class="kachel">
+              <img
+                src="assets/img/meerkat.png"
+                width="50"
+                alt="Bild von einem Erdmännchen"
+              />
+              Der Held am Abend
+            </a>
+          </div>
+          <div id="podList" style="display: none">
+            <ul>
+              <li><a href="/podcast.html">Fest und Flauschig</a> - 3 Folgen</li>
+              <li>
+                <a href="/podcast.html">Trashtalk mit Fabian</a> - 9 Folgen
+              </li>
+              <li>
+                <a href="/podcast.html">5 Minuten Harry Podcast</a> - 34 Folgen
+              </li>
+            </ul>
+          </div>
         </article>
       </main>
       <aside class="podAside">
@@ -70,5 +110,7 @@
     <footer>
       <p>&copy; 2021 Fabian Teufel</p>
     </footer>
+    <script src="javascript/javascript.js"></script>
+    <script src="javascript/index.js"></script>
   </body>
 </html>
