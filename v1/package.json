@@ -1,0 +1,27 @@
+{
+  "name": "v1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheLethalGoose/WebTechPodcastApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheLethalGoose/WebTechPodcastApp/issues"
+  },
+  "homepage": "https://github.com/TheLethalGoose/WebTechPodcastApp#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "podcast-feed-parser": "^1.0.4"
+  }
+}
