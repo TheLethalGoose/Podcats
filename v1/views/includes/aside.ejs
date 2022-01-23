@@ -1,0 +1,10 @@
+<aside class="podAside">
+  <article>
+    <h3>Neueste Episoden</h3>
+    <ul>
+      <% for (podcast of podcasts) { %>
+      <li><%= podcast.episodes[0].pubDate.slice(0,10) %>: <%= podcast.title %> <%= podcast.episodes[0].title %></li>
+      <% } %>
+    </ul>
+  </article>
+</aside>

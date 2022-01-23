@@ -1,8 +1,11 @@
 const parser = require("./podcastParser");
 
+let podcasts = [];
+
 class Podcast {
   constructor(
     title,
+    subtitle,
     description,
     imageURL,
     lastUpdated,
@@ -14,13 +17,14 @@ class Podcast {
   ) {
     this.title = title;
     this.description = description;
+    this.subtitle = subtitle;
     this.imageURL = imageURL;
     this.lastUpdated = lastUpdated;
     this.feedURL = feedURL;
     this.author = author;
-    (this.ownerName = ownerName),
-      (this.ownerEmail = ownerEmail),
-      (this.categories = categories);
+    this.ownerName = ownerName,
+    this.ownerEmail = ownerEmail,
+    this.categories = categories;
     this.episodes = [];
   }
 
@@ -47,12 +51,13 @@ class Episode {
   }
 
   getdurationInStundenUndMinuten() {
-    var stunden = Math.floor(this.duration / 36000);
 
-    var minuten = Math.floor(stunden % 100);
-    stunden /= 100;
+    let minuten = this.duration / 60;
 
-    return Math.floor(stunden) + "h " + minuten + "m";
+    let stunden = Math.floor(minuten/60);
+    minuten = Math.round(minuten % 60);
+
+    return stunden + "h " + minuten + "m";
   }
 }
 
@@ -64,8 +69,6 @@ class EpisodeAudio {
   }
 }
 
-let podcasts = [];
-
 /**
  * Abonniert einen Podcast, indem die Daten von der gegebenen Feed-URL
  * importiert werden. Der Import selbst erfolgt asynchron, daher wird
@@ -76,7 +79,7 @@ let podcasts = [];
  *                            Import passieren soll.
  */
 function abonnieren(URL, callback) {
-  parser.parseFeed(URL, (feed) => {
+  parser.parseFeed(URL,feed => {
     podcasts.push(konvertieren(URL, feed));
     if (callback) callback();
   });
@@ -95,6 +98,7 @@ function konvertieren(URL, feed) {
 
   var newPodcast = new Podcast(
     feedMeta.title,
+    feedMeta.subtitle,
     feedMeta.description,
     feedMeta.imageURL,
     feedMeta.lastUpdated,
@@ -119,8 +123,15 @@ function konvertieren(URL, feed) {
     );
     newPodcast.episodes.push(newEpisode);
   });
-  podcasts.push(newPodcast);
+  
+  return newPodcast;
+
+}
+module.exports = {
+
+  podcastList: podcasts,
+  abonnieren: abonnieren
+
 }
 
-module.exports.podcasts = podcasts;
-module.exports.abonnieren = abonnieren;
+

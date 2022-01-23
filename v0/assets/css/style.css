@@ -11,7 +11,7 @@ header h1{
 main h2{
   font-size: 3em;
 }
-article[title^=""] > img,
+article[title^="Fest und Flauschig"] > img,
 h2 {
   display: inline;
 }

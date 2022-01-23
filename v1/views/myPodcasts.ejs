@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>Podcaster</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/flexbox.css" />
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+  </head>
+  <body class="bodyContainer">
+    <%- include("./includes/header.ejs") %>
+    <div class="podcastInformations">
+      <main class="mainContainer">
+        <form
+          action="https://labs.inf.fh-dortmund.de/podcastService/testPodcastSearch.php"
+          method="get"
+          id="podSearch"
+        >
+          <fieldset class="podFieldset">
+            <legend class="podLegend">Podcast Suche</legend>
+            <input
+              id="search"
+              type="text"
+              name="pctitle"
+              size="20"
+              pattern="^[A-Z].*$"
+              maxlength="100"
+              required
+              placeholder="Titel des Podcasts"
+            />
+            <button class="btn" form="podSearch" type="submit">Suchen!</button>
+          </fieldset>
+        </form>
+        <article>
+          <h2>Abonnierte Podcasts:</h2>
+          <div id="kachelContainer">
+            <% for(var i = 0; i < podcasts.length ; i++) { %>
+
+            <a href="<%="/podcast?pc="+i%>" class="kachel">
+              <img
+                src=" <%= podcasts[i].imageURL %> "
+                width="100"
+                alt="Bind des Podcasts"
+              />
+              <%= podcasts[i].title %>
+            </a>
+
+            <% } %>
+          </div>
+        </article>
+      </main>
+      <%- include("./includes/aside.ejs") %>
+    </div>
+    <%- include("./includes/footer.ejs") %>
+    <script src="/js/javascript.js"></script>
+    <script src="/js/index.js"></script>
+  </body>
+</html>

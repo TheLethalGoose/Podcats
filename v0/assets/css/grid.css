@@ -1,11 +1,12 @@
 .bodyContainer {
   display: grid;
   grid-template-columns: auto auto 15%;
-  grid-template-areas: "header header header" "desc pic aside" "footer footer footer";
+  grid-template-areas: "header header header" "nav nav nav" "desc pic aside" "footer footer footer";
 }
 .podPicture {
   grid-area: pic;
-  width: 80%;
+  width: auto;
+  transform: scaleX(-1);
 }
 .podDescription {
   grid-area: desc;

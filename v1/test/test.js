@@ -1,5 +1,8 @@
 const podcastImport = require("../models/persistence.js")
-let myPodcasts = podcastImport.podcasts;
+const data = require("../data.js");
+
+
+let myPodcasts = data.podcastsData;
 
 const fertig = function () {
   console.log(myPodcasts);

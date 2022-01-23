@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Podcaster</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/grid.css" />
+  </head>
+  <body class="bodyContainer">
+    <%- include("./includes/header.ejs") %>
+    <img
+      class="podPicture"
+      src="<%= podcasts[id].imageURL %>"
+      alt="Bild von einem gut gepflegtem Fuß"
+    />
+    <main>
+      <article class="podDescription">
+        <h2><%= podcasts[id].title %></h2>
+        <section title="Informationen zum Podcast">
+          <p><%= podcasts[id].description %></p>
+          <p>Autoren: <%= podcasts[id].author %></p>
+          <p>
+            Besitzer:
+            <a href="mailto:<%= podcasts[id].ownerEmail%>"
+              ><%= podcasts[id].ownerName%></a
+            >
+          </p>
+          <p>Kategorien: <%= podcasts[id].categories %></p>
+          <p>Letztes Update: <%= podcasts[id].lastUpdated?.slice(0,10) %></p>
+        </section>
+        <section title="Episoden zum Podcast">
+          <h3>Episoden</h3>
+          <table class="podTable">
+            <thead>
+              <tr>
+                <th>Folge Nr.</th>
+                <th>Titel</th>
+                <th>Erscheinungsdatum</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(var i = podcasts[id].episodes.length-1; i >= 0 ; i--) { %>
+              <tr>
+                <td><%= podcasts[id].episodes.length - i %></td>
+                <td><a href=<%= "/episode?pc="+id+"&ep="+i %> ><%= podcasts[id].episodes[i].title %></a></td>
+                <td><%= podcasts[id].episodes[i].pubDate.slice(0,10) %></td>
+              </tr>
+              <% } %>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th colspan="2">Gesamtanzahl Episoden</th>
+                <th><%= podcasts[id].episodes.length%></th>
+              </tr>
+            </tfoot>
+          </table>
+        </section>
+      </article>
+    </main>
+    <%- include("./includes/aside.ejs") %> <%- include("./includes/footer.ejs")
+    %>
+  </body>
+</html>
