@@ -7,6 +7,14 @@ header h1{
   display: inline;
   font-size: 500%;
   min-width: 15%;
+
+}
+header>a{
+  text-decoration: none;
+  color: inherit;
+}
+header>a:hover{
+  text-shadow: 2px 2px 5px #30517b;
 }
 main h2{
   font-size: 3em;
@@ -23,8 +31,11 @@ a[href^="mailto:"] {
   padding-left: 20px;
 }
 footer {
-  position: fixed;
+  position: static;
   bottom: 0;
+}
+#ErrorHeading{
+  font-size: 5em;
 }
 /* Form und Fieldset */
 
@@ -36,7 +47,7 @@ footer {
   color: white;
 }
 .btn:hover{
-  background-color: #4579bd;
+  background-color: #4779ba;
 }
 
 #newPodcastForm {
@@ -46,8 +57,7 @@ footer {
   border-width: 1px 0px 1px 0px;
   border-style: solid;
   border-color: black;
-  margin-bottom: 1%;
-  margin-right: 1%;
+  margin: 1% 1% 1% 0%;
 }
 .podLegend {
   border-style: solid;
@@ -97,6 +107,14 @@ th {
   margin-top: 5px;
   border: solid 1px;
   color: white;
+}
+.podAside a,a:link{
+  text-decoration: none;
+  color: inherit;
+}
+.podAside a:visited{
+  text-decoration: none;
+  color: #677280;
 }
 /* Navigation */
 .podNav li {

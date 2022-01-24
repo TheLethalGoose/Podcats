@@ -3,8 +3,11 @@ const router = express.Router();
 
 const podcastController = require("../controller/podcastController");
 
-router.use("/index",podcastController.showMyPodcasts);
-router.use("/podcast",podcastController.podcast);
-router.use("/episode", podcastController.episode);
+router.get("/",podcastController.podcasts);
+router.get("/podcast",podcastController.podcast);
+router.get("/episode", podcastController.episode);
+
+router.use(podcastController.error);
+
 
 module.exports = router;

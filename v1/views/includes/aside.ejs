@@ -2,8 +2,15 @@
   <article>
     <h3>Neueste Episoden</h3>
     <ul>
-      <% for (podcast of podcasts) { %>
-      <li><%= podcast.episodes[0].pubDate.slice(0,10) %>: <%= podcast.title %> <%= podcast.episodes[0].title %></li>
+      <% for(var i = 0; i < podcasts.length ; i++) { %>
+      <li>
+        <%= podcast.episodes[0].pubDate.slice(0,10) %>
+        
+        <a href=<%= "/episode?pc="+i+"&ep="+0 %> >
+        <%= podcasts[i].title %>
+        <%= podcasts[i].episodes[0].title %>
+        </a>
+      </li>
       <% } %>
     </ul>
   </article>
