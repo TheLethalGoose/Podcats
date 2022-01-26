@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
-    <title>Podcaster</title>
+    <title>Podcaster - Meine Podcasts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/css/flexbox.css" />
@@ -9,10 +9,10 @@
   </head>
   <body class="bodyContainer">
     <%- include("./includes/header.ejs") %>
-    <div class="podcastInformations">
+    <div class="informations">
       <main class="mainContainer">
         <form
-          action="https://labs.inf.fh-dortmund.de/podcastService/testPodcastSearch.php"
+          action="/"
           method="get"
           id="podSearch"
         >
@@ -20,7 +20,7 @@
             <legend class="podLegend">Podcast Suche</legend>
             <input
               id="search"
-              type="text"
+              type="search"
               name="pctitle"
               size="20"
               pattern="^[A-Z].*$"
@@ -32,14 +32,14 @@
           </fieldset>
         </form>
         <article>
-          <h2>Abonnierte Podcasts:</h2>
+          <h2><%=anzeige%></h2>
           <div id="kachelContainer">
             <% for(var i = 0; i < podcasts.length ; i++) { %>
-              <a href="<%="/podcast?pc="+i%>" class="kachel">
+              <a href="<%="/podcast?pc="+i%>" class="kachel" id="<%="podcastNo="+i%>">
                 <img
                   src=" <%= podcasts[i].imageURL %> "
                   width="100"
-                 alt="Bind des Podcasts"
+                  alt="Bind des Podcasts"
                 />
                 <%= podcasts[i].title %>
               </a>
@@ -56,8 +56,8 @@
             </ul>
           </div>
         <form
-          action=""
-          method="get"
+          action="/abonnieren"
+          method="post"
           id="podSub"
         >
           <fieldset class="podFieldset">
@@ -65,12 +65,12 @@
             <label for="sub">URL:</label>
             <input
               id="sub"
-              type="text"
+              type="url"
               name="pcurl"
               maxlength="100"
               required
             />
-            <button class="btn" form="podSearch" type="submit">Abonnieren!</button>
+            <button class="btn" form="podSub" type="submit">Abonnieren!</button>
           </fieldset>
         </form>
         </article>

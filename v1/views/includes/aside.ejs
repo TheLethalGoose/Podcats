@@ -4,7 +4,7 @@
     <ul>
       <% for(var i = 0; i < podcasts.length ; i++) { %>
       <li>
-        <%= podcast.episodes[0].pubDate.slice(0,10) %>
+        <%= podcasts[i].episodes[0].pubDate.slice(0,10) %>
         
         <a href=<%= "/episode?pc="+i+"&ep="+0 %> >
         <%= podcasts[i].title %>

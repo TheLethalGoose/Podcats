@@ -35,7 +35,7 @@ class Podcast {
     });
     return this;
   }
-  printEpisdoes() {
+  printEpisodes() {
     this.episodes.forEach((episode) => console.log(episode));
   }
 }
@@ -80,8 +80,9 @@ class EpisodeAudio {
  */
 function abonnieren(URL, callback) {
   parser.parseFeed(URL,feed => {
-    podcasts.push(konvertieren(URL, feed));
-    if (callback) callback();
+    var podcast = konvertieren(URL, feed);
+    podcasts.push(podcast);
+    if (callback) callback(podcast.title);
   });
 }
 

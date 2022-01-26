@@ -6,7 +6,7 @@
   align-content: flex-start;
   height: 100%;
 }
-.podcastInformations{
+.informations{
   display: flex;
   flex-direction: row;
   flex-grow: 1;
@@ -19,7 +19,7 @@
   flex-shrink: 0;
 }
 @media screen and (max-width: 768px) {
-    .podcastInformations{
+    .informations{
         flex-direction: column;
     }
 }

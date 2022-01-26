@@ -1,0 +1,8 @@
+.mainContainer h2 {
+  font-size: 15em;
+}
+.mainContainer p {
+  font-size: 5em;
+  font-weight: bold;
+  margin-top: 0;
+}

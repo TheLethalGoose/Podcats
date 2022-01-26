@@ -3,17 +3,20 @@
   <head>
     <title>Podcaster</title>
     <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/error.css" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/css/flexbox.css" />
   </head>
   <body class="bodyContainer">
     <%- include("./includes/header.ejs") %>
+    <div class="informations">
       <main class="mainContainer">
-
-        <h1 id="ErrorHeading"> Error 404</h1>
-
+        <h2>Error 404</h2>
+        <p>Entweder es war niemals da oder du hast es kaputt gemacht.</p>
       </main>
-    <%- include("./includes/aside.ejs") %>
+      <%- include("./includes/aside.ejs") %>
+    </div>
+
     <%- include("./includes/footer.ejs") %>
   </body>
 </html>

@@ -6,7 +6,6 @@
 .podPicture {
   grid-area: pic;
   width:100%;
-  min-height: 30%;
 
 }
 .podDescription {
