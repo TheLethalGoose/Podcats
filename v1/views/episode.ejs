@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <link rel="stylesheet" type="text/css" href="/css/flexbox.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body class="bodyContainer">
     <%- include("./includes/header.ejs") %>
@@ -16,7 +17,7 @@
             <h3><%=podcasts[id].episodes[ep].title%></h3>
             <ul>
               <li><%=podcasts[id].episodes[ep].description%></li>
-              <li><%= podcasts[id].episodes[ep].pubDate?.slice(0,10) %></li>
+              <li><%=podcasts[id].episodes[ep].pubDate?.slice(0,10) %></li>
               <li>
                 <%= podcasts[id].episodes[ep].getdurationInStundenUndMinuten()
                 %>

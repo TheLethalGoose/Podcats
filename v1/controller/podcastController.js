@@ -1,5 +1,5 @@
 const podcasts = require("../models/persistence");
-const search = require("../public/js/search");
+const search = require("./search");
 
 module.exports.podcasts = function (req, res) {
   if (req.query.pctitle) {
@@ -16,10 +16,12 @@ module.exports.podcasts = function (req, res) {
 };
 
 module.exports.podcast = function (req, res) {
-  
   var reqQueryPc = req.query.pc;
 
-  if (!/^[0-9]*$/.test(reqQueryPc) || reqQueryPc > podcasts.podcastList.length) {
+  if (
+    !/^[0-9]*$/.test(reqQueryPc) ||
+    reqQueryPc > podcasts.podcastList.length
+  ) {
     req.next();
     return;
   }
