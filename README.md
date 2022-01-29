@@ -1,3 +1,3 @@
-#Podcats
+# Podcats
 
-Semester Projekt Web Technologien der FH Dortmund
+Semester Projekt für den Kurs Web-Technologien der FH Dortmund
